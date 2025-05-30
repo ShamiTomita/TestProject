@@ -1,19 +1,26 @@
 ﻿/*
-string[] fraudulentOrderIDs = new string[3];
+ * This program reverses a string and counts the occurrences of the letter 'o'.
+ * It demonstrates basic string manipulation in C#.
+ */
 
-fraudulentOrderIDs[0] = "A123";
-fraudulentOrderIDs[1] = "B456";
-fraudulentOrderIDs[2] = "C789";
-// fraudulentOrderIDs[3] = "D000";
-*/
+string originalMessage = "The quick brown fox jumps over the lazy dog.";
 
-string[] fraudulentOrderIDs = ["A123", "B456", "C789"];
+char[] charMessage = originalMessage.ToCharArray();
 
-Console.WriteLine($"First: {fraudulentOrderIDs[0]}");
-Console.WriteLine($"Second: {fraudulentOrderIDs[1]}");
-Console.WriteLine($"Third: {fraudulentOrderIDs[2]}");
+Array.Reverse(charMessage);
+int charCount = 0;
 
-fraudulentOrderIDs[0] = "F000";
+foreach (char i in charMessage)
+{
+    if (i == 'o')
+    {
+        charCount++;
+    }
+}
 
-Console.WriteLine($"Reassign First: {fraudulentOrderIDs[0]}");
-Console.WriteLine($"There are {fraudulentOrderIDs.Length} fraudulent order IDs.");
+// convert it back to a string
+string newMessage = new String(charMessage);
+
+// print it out
+Console.WriteLine(newMessage);
+Console.WriteLine($"'o' appears {charCount} times.");
